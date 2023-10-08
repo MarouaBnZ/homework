@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
-
+// import { useState } from "react";
 function Contact() {
+  // let [inputValue, setInputValue] = useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  // });
   return (
     <>
-      <h1> Veuillez nous contactez par Mail</h1>
+      <h1 style={{ padding: "100px" }}> Veuillez nous contactez par Mail</h1>
       <div
         style={{
           display: "flex",
@@ -20,7 +25,12 @@ function Contact() {
           }}
         >
           <label style={{ fontWeight: "700", color: "Purple" }}> Nom </label>
-          <input type="text" style={{ width: "30%", borderRadius: "5px" }} />
+          <input
+            type="text"
+            style={{ width: "30%", borderRadius: "5px" }}
+            // value={inputValue}
+            // onChange={setInputValue((e) => {})}
+          />
 
           <label style={{ fontWeight: "700", color: "Purple" }}> Prenom </label>
           <input type="text" style={{ width: "30%", borderRadius: "5px" }} />

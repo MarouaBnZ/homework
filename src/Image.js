@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { ImageContext } from "./contexts/ImageContext";
 import { Link } from "react-router-dom";
-function Image({ title, descriptif }) {
+function Image({ title, descriptif, img }) {
   const images = useContext(ImageContext);
   const { imgId } = useParams();
   const image = images.find((i) => {
@@ -13,9 +13,13 @@ function Image({ title, descriptif }) {
   if (image) {
     return (
       <>
-        <h3> Voici la figure téléchargée</h3>
-        <h1> {image.title}</h1>
-        <p>{image.descriptif} </p>
+        <h1 style={{ color: "gray" }}> {image.title}</h1>
+        <img
+          src={`${image.img}`}
+          alt="Image_Téléchargée"
+          style={{ width: "25%" }}
+        />
+        <p style={{ fontWeight: "700" }}>{image.descriptif} </p>
       </>
     );
   } else {
